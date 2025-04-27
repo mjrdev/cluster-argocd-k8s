@@ -6,6 +6,10 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
+  tls:
+  - hosts:
+    - hello-world.kube.volts-softwares.com.br
+    secretName: letsencrypt-prod
   rules:
   - host: hello-world.kube.volts-softwares.com.br
     http:
