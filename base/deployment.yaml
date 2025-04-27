@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: nginx:latest
+        image: hashicorp/http-echo
         resources:
           requests:
             cpu: 100m
@@ -24,7 +24,13 @@ spec:
           limits:
             cpu: 200m
             memory: 256Mi
-        # args:
-        # - "-text=Hello World from ArgoCD!"
+        args:
+        - "-text=Hello World from ArgoCD!"
         ports:
-        - containerPort: 80
+        - containerPort: 5678
+        readinessProbe:
+            httpGet:
+              path: /
+              port: 5678
+            initialDelaySeconds: 2
+            periodSeconds: 5
