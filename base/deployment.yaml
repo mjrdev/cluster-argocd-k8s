@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: nginx
+        image: nginx:latest
         resources:
           requests:
             cpu: 100m
