@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/seu-usuario/hello-world-argo'
+    repoURL: 'https://github.com/mjrdev/cluster-argocd-k8s'
     targetRevision: HEAD
     path: base
   destination:

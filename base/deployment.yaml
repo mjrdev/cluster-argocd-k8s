@@ -21,3 +21,9 @@ spec:
         - "-text=Hello World from ArgoCD!"
         ports:
         - containerPort: 5678
+        readinessProbe:
+            httpGet:
+              path: /
+              port: 5678
+            initialDelaySeconds: 2
+            periodSeconds: 5
